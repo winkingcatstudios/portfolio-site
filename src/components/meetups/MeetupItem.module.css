@@ -1,3 +1,17 @@
+/*  
+black: #010101
+white pointer: #fefcff
+purple heart: #5d20d3
+silver chalice: #9e9e9e
+meteorite: #321b6c
+mauve: #c9a2ff
+aquamarine blue: #71e1e1
+aquamarine blue darker: #51c1c1
+orange peel: #f59f01
+calypso: #377a94
+brick red: #c82a33
+*/
+
 .item {
     margin: 1rem 0;
   }
@@ -18,29 +32,32 @@
   .content {
     text-align: center;
     padding: 1rem;
+    background-color: #fefcff;
+    color: #321b6c;
   }
   
   .content h3 {
     font-size: 1.25rem;
-    color: #2c292b;
+    color: #321b6c;
   }
   
   .actions {
     padding: 1.5rem;
     text-align: center;
+    background-color: #fefcff;
   }
   
   .actions button {
     font: inherit;
     cursor: pointer;
-    color: #77002e;
-    border: 1px solid #77002e;
-    background-color: transparent;
+    color: #fefcff;
+    border: 1px solid #fefcff;
+    background-color: #5d20d3;
     padding: 0.5rem 1.5rem;
     border-radius: 4px;
   }
   
   .actions button:hover,
   .actions button:active {
-    background-color: #ffe2ed;
+    background-color: #321b6c;
   }
