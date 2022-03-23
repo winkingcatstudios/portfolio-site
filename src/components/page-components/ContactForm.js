@@ -1,51 +1,64 @@
 import { useRef } from "react";
+import emailjs from "emailjs-com";
 
 import Card from "../ui/Card";
 import classes from "./ContactForm.module.css";
 
 function ContactForm(props) {
-  const nameInputRef = useRef();
-  const emailInputRef = useRef();
-  const subjectInputRef = useRef();
-  const messageInputRef = useRef();
+  const form = useRef();
 
+  function sendEmail(e) {
+    e.preventDefault();
 
-  function submitHandler(event) {
-    event.preventDefault();
-
-    const enteredName = nameInputRef.current.value;
-    const enteredEmail = emailInputRef.current.value;
-    const enteredSubject= subjectInputRef.current.value;
-    const enteredMessage = messageInputRef.current.value;
-
-    const contactData = {
-        name: enteredName,
-        email: enteredEmail,
-        subject: enteredSubject,
-        message: enteredMessage
-    };
-
-    props.onSendMessage(contactData);
+    emailjs
+      .sendForm(
+        "service_5gva93v",
+        "template_fuob5vo",
+        form.current,
+        "jUP-LFSIdUa-olDGG"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
   }
 
   return (
     <Card>
-      <form className={classes.form} onSubmit={submitHandler}>
+      <form className={classes.form} ref={form} onSubmit={sendEmail}>
         <div className={classes.control}>
-          <label htmlFor="Name">Name</label>
-          <input type="text" required id="name" ref={nameInputRef} />
+          <label>
+            Name<span className={classes.r}>*</span>
+          </label>
+          <input type="text" required name="name" placeholder="Name" />
         </div>
         <div className={classes.control}>
-          <label htmlFor="Email">Email Address</label>
-          <input type="email" required id="email" ref={emailInputRef} />
+          <label>
+            Email Address<span className={classes.r}>*</span>
+          </label>
+          <input type="email" required name="email" placeholder="Email" />
         </div>
         <div className={classes.control}>
-          <label htmlFor="address">Subject</label>
-          <input type="text" required id="subject" ref={subjectInputRef} />
+          <label>
+            Subject<span className={classes.r}>*</span>
+          </label>
+          <input type="text" required name="subject" placeholder="Subject" />
         </div>
         <div className={classes.control}>
-          <label htmlFor="description">Message</label>
-          <textarea id="message" required rows="5" ref={messageInputRef} />
+          <label>
+            Message<span className={classes.r}>*</span>
+          </label>
+          <textarea
+            name="message"
+            required
+            rows="5"
+            placeholder="Your message"
+          />
         </div>
         <div className={classes.actions}>
           <button>Send Message</button>
