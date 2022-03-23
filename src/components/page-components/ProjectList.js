@@ -10,7 +10,7 @@ function ProjectList(props) {
           id={project.id}
           image={project.image}
           title={project.title}
-          address={project.address}
+          gitLink={project.gitLink}
           description={project.description}
         />
       ))}

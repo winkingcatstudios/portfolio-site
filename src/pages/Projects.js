@@ -1,6 +1,6 @@
 import ProjectList from "../components/page-components/ProjectList";
 
-const DUMMY_DATA = [
+const PROJECT_DATA = [
   {
     id: "m1",
     title: "Project 1",
@@ -25,7 +25,7 @@ function ProjectsPage() {
   return (
     <section>
       <h1>Projects</h1>
-      <ProjectList projects={DUMMY_DATA} />
+      <ProjectList projects={PROJECT_DATA} />
     </section>
   );
 }
