@@ -8,7 +8,7 @@ function Footer(props) {
     <div>
       <footer className={classes.footer}>
         <h3 style={{ height: 10 }}>Let's talk </h3>
-        Want to get in touch or talk about a project? <br />
+        <div>Want to get in touch or talk about a project? <br />
         Feel free to contact me via email at{" "}
         <span style={{ fontWeight: "bold" }}>
           <ButtonMailto
@@ -21,6 +21,7 @@ function Footer(props) {
         <Link to="/contact">
           <span style={{ fontWeight: "bold" }}>contact page </span>
         </Link>
+        </div>
       </footer>
     </div>
   );

@@ -17,10 +17,16 @@ berick red: #c82a33
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
+  height: 100%;
   margin: 0;
-  background-color: #5d20d3;
+  background: #5d20d3;
+  background: linear-gradient(45deg, #5d20d3 0%, #321b6c 100%);
 }
 
 h1 {
@@ -34,6 +40,10 @@ h2 {
 }
 
 h3 {
+  color: #fefcff;
+}
+
+h4 {
   color: #fefcff;
 }
 
