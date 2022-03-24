@@ -1,5 +1,3 @@
-
-
 function AboutMePage() {
   return (
     <section>

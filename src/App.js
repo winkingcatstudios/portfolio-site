@@ -5,6 +5,7 @@ import ProjectsPage from "./pages/Projects";
 import FavoritesPage from "./pages/Favorites";
 import ContactPage from "./pages/Contact";
 import Layout from "./components/layout/Layout";
+import Footer from "./components/layout/Footer"
 
 function App() {
   return (
@@ -12,15 +13,19 @@ function App() {
       <Switch>
         <Route path="/" exact>
           <AboutMePage />
+          <Footer />
         </Route>
         <Route path="/about-this-site">
           <AboutThisSitePage />
+          <Footer />
         </Route>
         <Route path="/projects">
           <ProjectsPage />
+          <Footer />
         </Route>
         <Route path="/favorites">
           <FavoritesPage />
+          <Footer />
         </Route>
         <Route path="/contact">
           <ContactPage />
