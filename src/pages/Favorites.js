@@ -1,5 +1,27 @@
+import { useContext } from "react";
+
+import FavoritesContext from "../store/favorite-context";
+import ProjectList from "../components/page-components/ProjectList";
+
 function FavoritesPage() {
-    return <div>Favorites Page</div>
+  const favoritesCtx = useContext(FavoritesContext);
+
+  let content;
+
+  if (favoritesCtx.totalFavorites === 0) {
+    content = (
+      <h2>You don't have any favorite projects yet, start adding some!</h2>
+    );
+  } else {
+    content = <ProjectList projects={favoritesCtx.favorites} />;
+  }
+
+  return (
+    <section>
+      <h1>My Favorites</h1>
+      {content}
+    </section>
+  );
 }
 
-export default FavoritesPage
+export default FavoritesPage;

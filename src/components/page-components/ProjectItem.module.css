@@ -50,14 +50,16 @@ brick red: #c82a33
   .actions button {
     font: inherit;
     cursor: pointer;
-    color: #fefcff;
-    border: 1px solid #fefcff;
-    background-color: #5d20d3;
+    background-color: #71e1e1;
+    color: #321b6c;
     padding: 0.5rem 1.5rem;
+    border: 1px solid #71e1e1;
     border-radius: 4px;
+    font-weight: bold;
   }
   
   .actions button:hover,
   .actions button:active {
-    background-color: #321b6c;
+    background-color: #51c1c1;
+    border-color: #51c1c1;
   }
