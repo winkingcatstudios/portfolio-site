@@ -1,6 +1,6 @@
 import { useContext } from "react";
 
-import Card from "../ui/Card";
+import CardOld from "../ui/CardOld";
 import classes from "./ProjectItem.module.css";
 import FavoritesContext from "../../store/favorite-context";
 
@@ -25,7 +25,7 @@ function ProjectItem(props) {
 
   return (
     <li className={classes.item}>
-      <Card>
+      <CardOld>
         <div className={classes.image}>
           <img src={props.image} alt={props.title} />
         </div>
@@ -39,7 +39,7 @@ function ProjectItem(props) {
             {itemIsFavorite ? "Remove from Favorites" : "To Favorites"}
           </button>
         </div>
-      </Card>
+      </CardOld>
     </li>
   );
 }

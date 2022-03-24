@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import emailjs from "emailjs-com";
 
-import Card from "../ui/Card";
+import CardOld from "../ui/CardOld";
 import classes from "./ContactForm.module.css";
 
 function ContactForm(props) {
@@ -29,7 +29,7 @@ function ContactForm(props) {
   }
 
   return (
-    <Card>
+    <CardOld>
       <form className={classes.form} ref={form} onSubmit={sendEmail}>
         <div className={classes.control}>
           <label>
@@ -64,7 +64,7 @@ function ContactForm(props) {
           <button>Send Message</button>
         </div>
       </form>
-    </Card>
+    </CardOld>
   );
 }
 
