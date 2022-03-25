@@ -1,29 +1,39 @@
 import ProjectList from "../components/page-components/ProjectList";
+import classes from "./Projects.module.css";
 
 const PROJECT_DATA = [
   {
-    id: "m1",
+    id: "p1",
     title: "Project 1",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/2560px-Stadtbild_M%C3%BCnchen.jpg",
-    gitLink: "github/project1",
-    description:
-      "Example project in Python",
+    type: "Python",
+    image: "/python_stock.jpeg",
+    gitLink: "https://github.com/winkingcatstudios",
+    shortDescription: "Example project in Python",
+    longDescription:
+      "Example project in Python. This is the long description that appears below the expand window. ",
   },
   {
-    id: "m2",
+    id: "p2",
     title: "Project 2",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/2560px-Stadtbild_M%C3%BCnchen.jpg",
-    gitLink: "github/project1",
-    description:
-      "Example project in MatLab",
+    type: "Matlab",
+    image: "/matlab_stock.jpeg",
+    gitLink: "https://github.com/winkingcatstudios",
+    shortDescription: "Example project in MatLab",
+    longDescription: "Example project in Python",
+  },
+  {
+    id: "p3",
+    title: "Portfolio Site",
+    type: "JavaScript",
+    image: "/js_stock.jpeg",
+    shortDescription: "The site you are currently viewing",
+    longDescription: "This site was created using React, Material-UI, EmailJS",
   },
 ];
 
 function ProjectsPage() {
   return (
-    <section>
+    <section className={classes.main}>
       <h1>Projects</h1>
       <ProjectList projects={PROJECT_DATA} />
     </section>
@@ -31,3 +41,6 @@ function ProjectsPage() {
 }
 
 export default ProjectsPage;
+
+// old return
+// <ProjectList projects={PROJECT_DATA} />

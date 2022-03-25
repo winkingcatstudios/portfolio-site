@@ -4,7 +4,7 @@ import ButtonMailto from "../components/page-components/ButtonMailto";
 
 function ContactPage() {
   return (
-    <section>
+    <section className={classes.main}>
       <h1 style={{ height: 30 }}>Contact Me</h1>
       <div className={classes.text}>
         If you want to ask a question, talk to me about a project collaboration,

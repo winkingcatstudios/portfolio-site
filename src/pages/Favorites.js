@@ -2,6 +2,7 @@ import { useContext } from "react";
 
 import FavoritesContext from "../store/favorite-context";
 import ProjectList from "../components/page-components/ProjectList";
+import classes from "./Favorites.module.css";
 
 function FavoritesPage() {
   const favoritesCtx = useContext(FavoritesContext);
@@ -17,7 +18,7 @@ function FavoritesPage() {
   }
 
   return (
-    <section>
+    <section className={classes.main}>
       <h1>My Favorites</h1>
       {content}
     </section>
