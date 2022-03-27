@@ -13,9 +13,20 @@ berick red: #c82a33
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
-::-webkit-scrollbar {
-  display: none;
+body::-webkit-scrollbar {
+  width: 0.7em;
+  background: #321b6c;
 }
+body::-webkit-scrollbar-thumb {
+  background: #5d20d3;
+  height:30px;
+}
+
+body::-webkit-scrollbar-track-piece
+{
+   display:none;
+}
+
 
 * {
   box-sizing: border-box;
@@ -23,6 +34,7 @@ berick red: #c82a33
 
 html {
   height: 100%;
+  overflow-y: scroll;
 }
 
 body {
@@ -31,6 +43,8 @@ body {
   margin: 0;
   background: #5d20d3;
   background: linear-gradient(45deg, #5d20d3 0%, #321b6c 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 h1 {

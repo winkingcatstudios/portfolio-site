@@ -26,6 +26,7 @@ const PROJECT_DATA = [
     title: "Portfolio Site",
     type: "JavaScript",
     image: "/js_stock.jpeg",
+    gitLink: "https://github.com/winkingcatstudios/portfolio-site",
     shortDescription: "The site you are currently viewing",
     longDescription: "This site was created using React, Material-UI, EmailJS",
   },
