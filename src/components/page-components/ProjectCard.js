@@ -19,48 +19,6 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 
-// function ProjectCard(props) {
-// const favoritesCtx = useContext(FavoritesContext);
-
-// const itemIsFavorite = favoritesCtx.itemIsFavorite(props.id);
-
-// function toggleFavoriteStatusHandler() {
-//   if (itemIsFavorite) {
-//     favoritesCtx.removeFavorite(props.id);
-//   } else {
-//     favoritesCtx.addFavorite({
-//       id: props.id,
-//       title: props.title,
-//       description: props.description,
-//       image: props.image,
-//       gitLink: props.gitLink,
-//     });
-//   }
-// }
-
-//   return (
-//     <li className={classes.item}>
-
-//         <div className={classes.image}>
-//           <img src={props.image} alt={props.title} />
-//         </div>
-//         <div className={classes.content}>
-//           <h3>{props.title}</h3>
-//           <p>{props.gitLink}</p>
-//           <p>{props.description}</p>
-//         </div>
-//         <div className={classes.actions}>
-//           <button onClick={toggleFavoriteStatusHandler}>
-//             {itemIsFavorite ? "Remove from Favorites" : "To Favorites"}
-//           </button>
-//         </div>
-
-//     </li>
-//   );
-// }
-
-// export default ProjectCard;
-
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
   return <IconButton {...other} />;
@@ -80,7 +38,7 @@ export default function ProjectCard(props) {
   const itemIsFavorite = favoritesCtx.itemIsFavorite(props.id);
 
   function toggleFavoriteStatusHandler() {
-    if (itemIsFavorite) {
+    if (favoritesCtx.favorites.some((element) => props.id === element.id)) {
       favoritesCtx.removeFavorite(props.id);
     } else {
       favoritesCtx.addFavorite({
@@ -134,7 +92,11 @@ export default function ProjectCard(props) {
           onClick={toggleFavoriteStatusHandler}
           aria-label="add to favorites"
         >
-          {itemIsFavorite ? (
+          {console.log(props.id)}{" "}
+
+          {console.log(favoritesCtx.favorites.some((element) => props.id === element.id))}
+
+          {favoritesCtx.favorites.some((element) => props.id === element.id) ? (
             <FavoriteIcon style={{ color: red[800] }} />
           ) : (
             <FavoriteIcon />
