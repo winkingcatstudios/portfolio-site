@@ -6,8 +6,14 @@ import FavoritesPage from "./pages/Favorites";
 import ContactPage from "./pages/Contact";
 import Layout from "./components/layout/Layout";
 import Footer from "./components/layout/Footer";
+import FavoritesContext from "./store/favorite-context";
+import { useContext } from "react";
 
 function App() {
+  const favoritesCtx = useContext(FavoritesContext);
+  favoritesCtx.favorites = JSON.parse(localStorage.getItem("faves"));
+  favoritesCtx.totalFavorites = favoritesCtx.favorites.length;
+
   return (
     <Layout>
       <Switch>
