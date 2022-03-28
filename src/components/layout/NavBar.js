@@ -13,14 +13,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Logo from "../ui/Logo";
 import { Link } from "react-router-dom";
 import classes from "./NavBar.module.css";
-
-const pages = [
-  "About Me",
-  "About This Site",
-  "Projects",
-  "Favorites",
-  "Contact",
-];
+import FavoritesBadge from "../ui/FavoritesBadge";
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -33,10 +26,6 @@ const ResponsiveAppBar = () => {
     setAnchorElNav(null);
   };
 
-  const handleAboutMe = () => {
-    console.log("About me clicked");
-  };
-
   return (
     <AppBar
       position="static"
@@ -44,11 +33,15 @@ const ResponsiveAppBar = () => {
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Typography 
-            variant="h4"
+          <Typography
+            variant="h6"
             noWrap
             component="div"
-            sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
+            sx={{
+              fontWeight: "bold",
+              mr: 2,
+              display: { xs: "none", md: "flex" },
+            }}
           >
             <Logo />
             &nbsp;Winking Cat Studios
@@ -83,18 +76,77 @@ const ResponsiveAppBar = () => {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+              <Link className={classes.navItem} to="/">
+                <MenuItem onClick={handleCloseNavMenu}>
+                  <Typography
+                    sx={{
+                      fontWeight: "bold",
+                    }}
+                    textAlign="center"
+                  >
+                    About Me
+                  </Typography>
                 </MenuItem>
-              ))}
+              </Link>
+              <Link className={classes.navItem} to="/about-this-site">
+                <MenuItem onClick={handleCloseNavMenu}>
+                  <Typography
+                    sx={{
+                      fontWeight: "bold",
+                    }}
+                    textAlign="center"
+                  >
+                    About This Site
+                  </Typography>
+                </MenuItem>
+              </Link>
+              <Link className={classes.navItem} to="/projects">
+                <MenuItem onClick={handleCloseNavMenu}>
+                  <Typography
+                    sx={{
+                      fontWeight: "bold",
+                    }}
+                    textAlign="center"
+                  >
+                    Projects
+                  </Typography>
+                </MenuItem>
+              </Link>
+              <Link className={classes.navItem} to="/favorites">
+                <MenuItem onClick={handleCloseNavMenu}>
+                  <Typography
+                    sx={{
+                      fontWeight: "bold",
+                    }}
+                    textAlign="center"
+                  >
+                    <FavoritesBadge />
+                  </Typography>
+                </MenuItem>
+              </Link>
+              <Link className={classes.navItem} to="/contact">
+                <MenuItem onClick={handleCloseNavMenu}>
+                  <Typography
+                    sx={{
+                      fontWeight: "bold",
+                    }}
+                    textAlign="center"
+                  >
+                    Contact
+                  </Typography>
+                </MenuItem>
+              </Link>
             </Menu>
           </Box>
           <Typography
-            variant="h4"
+            variant="h6"
             noWrap
             component="div"
-            sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
+            sx={{
+              fontWeight: "bold",
+              flexGrow: 1,
+              display: { xs: "flex", md: "none" },
+            }}
           >
             <Logo />
             &nbsp;Winking Cat Studios
@@ -102,45 +154,65 @@ const ResponsiveAppBar = () => {
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <Link className={classes.navItem} to="/">
               <Button
-                className={classes.navItem}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{
+                  fontWeight: "bold",
+                  my: 2,
+                  color: "white",
+                  display: "block",
+                }}
               >
                 About Me
               </Button>
             </Link>
             <Link className={classes.navItem} to="/about-this-site">
               <Button
-                className={classes.navItem}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{
+                  fontWeight: "bold",
+                  my: 2,
+                  color: "white",
+                  display: "block",
+                }}
               >
                 About This Site
               </Button>
             </Link>
             <Link className={classes.navItem} to="/projects">
               <Button
-                className={classes.navItem}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{
+                  fontWeight: "bold",
+                  my: 2,
+                  color: "white",
+                  display: "block",
+                }}
               >
                 Projects
               </Button>
             </Link>
             <Link className={classes.navItem} to="/favorites">
               <Button
-                className={classes.navItem}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{
+                  fontWeight: "bold",
+                  my: 1.8,
+                  color: "white",
+                  display: "block",
+                }}
               >
-                Favorites
+                <FavoritesBadge />
               </Button>
             </Link>
             <Link className={classes.navItem} to="/contact">
               <Button
-                className={classes.navItem}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{
+                  fontWeight: "bold",
+                  my: 2,
+                  color: "white",
+                  display: "block",
+                }}
               >
                 Contact
               </Button>
