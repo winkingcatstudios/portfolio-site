@@ -58,7 +58,7 @@ export default function ProjectCard(props) {
   };
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345, width: "100%" }} >
       <CardHeader
         avatar={
           <Avatar
