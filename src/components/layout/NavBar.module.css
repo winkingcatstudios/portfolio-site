@@ -61,9 +61,15 @@ berick red: #c82a33
   .navItem {
     text-decoration: none;
     font-size: 1rem;
+    font-weight: bold;
     color: #fefcff
   }
 
   .navMenuItem {
     text-decoration: none;
+  }
+
+  .navTitle {
+    font-weight: bold;
+    color: #fefcff
   }

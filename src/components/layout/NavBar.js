@@ -33,6 +33,10 @@ const ResponsiveAppBar = () => {
     setAnchorElNav(null);
   };
 
+  const handleAboutMe = () => {
+    console.log("About me clicked");
+  };
+
   return (
     <AppBar
       position="static"
@@ -40,8 +44,8 @@ const ResponsiveAppBar = () => {
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Typography
-            variant="h6"
+          <Typography 
+            variant="h4"
             noWrap
             component="div"
             sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
@@ -87,7 +91,7 @@ const ResponsiveAppBar = () => {
             </Menu>
           </Box>
           <Typography
-            variant="h6"
+            variant="h4"
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
@@ -96,33 +100,51 @@ const ResponsiveAppBar = () => {
             &nbsp;Winking Cat Studios
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {/* {pages.map((page) => (
+            <Link className={classes.navItem} to="/">
               <Button
-                key={page}
+                className={classes.navItem}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: "white", display: "block" }}
               >
-                {page}
-              </Button>
-            ))} */}
-            <Button
-              onClick={handleCloseNavMenu}
-              sx={{ my: 2, color: "white", display: "block" }}
-              to="/"
-            >
-              <Link className={classes.navItem} to="/">
                 About Me
-              </Link>
-            </Button>
-            <Button
-              onClick={handleCloseNavMenu}
-              sx={{ my: 2, color: "white", display: "block" }}
-              to="/about-this-site"
-            >
-              <Link className={classes.navItem} to="/about-this-site">
+              </Button>
+            </Link>
+            <Link className={classes.navItem} to="/about-this-site">
+              <Button
+                className={classes.navItem}
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: "white", display: "block" }}
+              >
                 About This Site
-              </Link>
-            </Button>
+              </Button>
+            </Link>
+            <Link className={classes.navItem} to="/projects">
+              <Button
+                className={classes.navItem}
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: "white", display: "block" }}
+              >
+                Projects
+              </Button>
+            </Link>
+            <Link className={classes.navItem} to="/favorites">
+              <Button
+                className={classes.navItem}
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: "white", display: "block" }}
+              >
+                Favorites
+              </Button>
+            </Link>
+            <Link className={classes.navItem} to="/contact">
+              <Button
+                className={classes.navItem}
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: "white", display: "block" }}
+              >
+                Contact
+              </Button>
+            </Link>
           </Box>
         </Toolbar>
       </Container>
