@@ -1,6 +1,6 @@
 import ProjectCard from "./ProjectCard";
 import classes from "./ProjectList.module.css";
-import { Container, Grid, Paper } from "@mui/material/";
+import { Container, Grid } from "@mui/material/";
 
 function ProjectList(props) {
   return (
