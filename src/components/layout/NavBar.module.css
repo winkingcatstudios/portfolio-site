@@ -57,3 +57,13 @@ berick red: #c82a33
     padding: 0 1rem;
     margin-left: 0.5rem;
   }
+
+  .navItem {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #fefcff
+  }
+
+  .navMenuItem {
+    text-decoration: none;
+  }

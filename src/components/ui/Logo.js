@@ -1,6 +1,6 @@
 import React from 'react'
 import { Icon } from "@material-ui/core";
-import WCLogoText from './winkingcatlogo-withtext.svg'
+import WCLogoText from './winkingcatlogo-notext.svg'
 
 function Logo() {
     return <Icon>
