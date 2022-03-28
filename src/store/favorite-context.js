@@ -11,6 +11,26 @@ const FavoritesContext = createContext({
 export function FavoritesContextProvider(props) {
   const [userFavorites, setUserFavorites] = useState([]);
 
+  if (localStorage.getItem("faves")) {
+    const savedFaves = JSON.parse(localStorage.getItem("faves"));
+
+    if (savedFaves.length !== 0) {
+      for (let i = 0; i < savedFaves.length; i++) {
+        if (!userFavorites.some((project) => project.id === savedFaves[i].id)) {
+          setUserFavorites((prevUserFavorites) => {
+            return prevUserFavorites.concat(savedFaves[i]);
+          });
+        }
+      }
+
+      // if (!userFavorites.some((project) => project.id === savedFaves[0].id)) {
+      //   setUserFavorites((prevUserFavorites) => {
+      //     return prevUserFavorites.concat(savedFaves[0]);
+      //   });
+      // }
+    }
+  }
+
   function addFavoriteHandler(favoriteProject) {
     setUserFavorites((prevUserFavorites) => {
       let faves = prevUserFavorites.concat(favoriteProject);

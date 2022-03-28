@@ -42,6 +42,3 @@ function ProjectsPage() {
 }
 
 export default ProjectsPage;
-
-// old return
-// <ProjectList projects={PROJECT_DATA} />

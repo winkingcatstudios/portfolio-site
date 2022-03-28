@@ -38,7 +38,7 @@ export default function ProjectCard(props) {
   const itemIsFavorite = favoritesCtx.itemIsFavorite(props.id);
 
   function toggleFavoriteStatusHandler() {
-    if (favoritesCtx.favorites.some((element) => props.id === element.id)) {
+    if (itemIsFavorite) {
       favoritesCtx.removeFavorite(props.id);
     } else {
       favoritesCtx.addFavorite({
@@ -92,11 +92,9 @@ export default function ProjectCard(props) {
           onClick={toggleFavoriteStatusHandler}
           aria-label="add to favorites"
         >
-          {console.log(props.id)}{" "}
+          {/* {console.log(favoritesCtx.favorites.some((element) => props.id === element.id))} */}
 
-          {console.log(favoritesCtx.favorites.some((element) => props.id === element.id))}
-
-          {favoritesCtx.favorites.some((element) => props.id === element.id) ? (
+          {itemIsFavorite ? (
             <FavoriteIcon style={{ color: red[800] }} />
           ) : (
             <FavoriteIcon />
