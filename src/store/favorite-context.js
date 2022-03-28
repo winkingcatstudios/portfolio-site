@@ -22,12 +22,6 @@ export function FavoritesContextProvider(props) {
           });
         }
       }
-
-      // if (!userFavorites.some((project) => project.id === savedFaves[0].id)) {
-      //   setUserFavorites((prevUserFavorites) => {
-      //     return prevUserFavorites.concat(savedFaves[0]);
-      //   });
-      // }
     }
   }
 
