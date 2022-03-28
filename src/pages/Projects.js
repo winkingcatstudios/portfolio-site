@@ -35,7 +35,7 @@ const PROJECT_DATA = [
 function ProjectsPage() {
   return (
     <section className={classes.main}>
-      <h1>Projects</h1>
+      <h1 className={classes.pageTitle}>Projects</h1>
       <ProjectList projects={PROJECT_DATA} />
     </section>
   );

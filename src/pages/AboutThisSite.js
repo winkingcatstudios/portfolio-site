@@ -3,7 +3,7 @@ import classes from "./AboutThisSite.module.css";
 function AboutThisSitePage() {
   return (
     <section className={classes.main}>
-      <h1>About This Website</h1>
+      <h1 className={classes.pageTitle}>About This Website</h1>
     </section>
   );
 }

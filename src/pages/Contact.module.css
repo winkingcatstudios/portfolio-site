@@ -37,3 +37,7 @@
     width: 10%;
     object-fit: cover;
   }
+
+  .pageTitle {
+    text-align: center;
+  }

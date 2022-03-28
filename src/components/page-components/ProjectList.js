@@ -5,9 +5,9 @@ import { Container, Grid, Paper } from "@mui/material/";
 function ProjectList(props) {
   return (
     <Container>
-      <Grid container>
+      <Grid container spacing={3}>
         {props.projects.map((project) => (
-          <Grid item xs={12} sm={6} md={4}>
+          <Grid item xs={12} sm={6} md={4} style={{ display: 'flex'}}>
               <ProjectCard
                 key={project.id}
                 id={project.id}

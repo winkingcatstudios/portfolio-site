@@ -3,13 +3,18 @@ import classes from "./AboutMe.module.css";
 function AboutMePage() {
   return (
     <section className={classes.main}>
-      <h1>About Dan Kercher</h1>
-      <img className={classes.image}
-        src={
-          "/winkingcatlogo-transparent-white.png"
-        }
-        alt={"winkingcat logo"}
-      />
+      <h1 className={classes.pageTitle}>About Me</h1>
+      <div className={classes.container}>
+        <div className={classes.text}>
+          Hi, I'm Dan Kercher
+        </div>
+        <div className={classes.image}>
+          <img
+            src={"/winkingcatlogo-transparent-white.png"}
+            alt={"winkingcat logo"}
+          />
+        </div>
+      </div>
     </section>
   );
 }

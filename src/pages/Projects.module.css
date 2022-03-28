@@ -3,3 +3,7 @@
     width: 90%;
     max-width: 90rem;
   }
+
+  .pageTitle {
+    text-align: center;
+  }
