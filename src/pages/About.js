@@ -1,6 +1,6 @@
-import classes from "./AboutMe.module.css";
+import classes from "./About.module.css";
 
-function AboutMePage() {
+function AboutPage() {
   return (
     <section className={classes.main}>
       <h1 className={classes.pageTitle}>About Me</h1>
@@ -19,4 +19,4 @@ function AboutMePage() {
   );
 }
 
-export default AboutMePage;
+export default AboutPage;

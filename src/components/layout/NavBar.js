@@ -84,11 +84,11 @@ const ResponsiveAppBar = () => {
                     }}
                     textAlign="center"
                   >
-                    About Me
+                    About
                   </Typography>
                 </MenuItem>
               </Link>
-              <Link className={classes.navItem} to="/about-this-site">
+              <Link className={classes.navItem} to="/skills">
                 <MenuItem onClick={handleCloseNavMenu}>
                   <Typography
                     sx={{
@@ -96,7 +96,7 @@ const ResponsiveAppBar = () => {
                     }}
                     textAlign="center"
                   >
-                    About This Site
+                    Skills
                   </Typography>
                 </MenuItem>
               </Link>
@@ -162,10 +162,10 @@ const ResponsiveAppBar = () => {
                   display: "block",
                 }}
               >
-                About Me
+                About
               </Button>
             </Link>
-            <Link className={classes.navItem} to="/about-this-site">
+            <Link className={classes.navItem} to="/skills">
               <Button
                 onClick={handleCloseNavMenu}
                 sx={{
@@ -175,7 +175,7 @@ const ResponsiveAppBar = () => {
                   display: "block",
                 }}
               >
-                About This Site
+                Skills
               </Button>
             </Link>
             <Link className={classes.navItem} to="/projects">
