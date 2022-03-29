@@ -29,29 +29,116 @@ function ProjectList(props) {
   const [showCpp, setShowCpp] = React.useState(true);
   const [showMatlab, setShowMatlab] = React.useState(true);
 
-  let content;
+  let contentPython;
+  let contentWebdev;
+  let contentCsharp;
+  let contentCpp;
+  let contentMatlab;
+  let projectsPython = [];
+  let projectsWebdev = [];
+  let projectsCsharp = [];
+  let projectsCpp = [];
+  let projectsMatlab = [];
+
+  // Allowed types: Python, Webdev, C#, C++, MATLAB
+
+  props.projects.map((project) => {
+    if (project.type === "Python") {
+      projectsPython.push(project);
+    } else if (project.type === "Webdev") {
+      projectsWebdev.push(project);
+    } else if (project.type === "C#") {
+      projectsCsharp.push(project);
+    } else if (project.type === "C++") {
+      projectsCpp.push(project);
+    } else if (project.type === "MATLAB") {
+      projectsMatlab.push(project);
+    } 
+  });
 
   if (showPython) {
-    content = (
-      <Grid container spacing={3} justifyContent="center">
-        {props.projects.map((project) => (
-          <Grid item xs={12} sm={6} md={4} style={{ display: "flex" }}>
-            <ProjectCard
-              key={project.id}
-              id={project.id}
-              image={project.image}
-              title={project.title}
-              type={project.type}
-              gitLink={project.gitLink}
-              shortDescription={project.shortDescription}
-              longDescription={project.longDescription}
-            />
-          </Grid>
-        ))}
+    contentPython = projectsPython.map((project) => (
+      <Grid item xs={12} sm={6} md={4} style={{ display: "flex" }}>
+        <ProjectCard
+          key={project.id}
+          id={project.id}
+          image={project.image}
+          title={project.title}
+          type={project.type}
+          gitLink={project.gitLink}
+          shortDescription={project.shortDescription}
+          longDescription={project.longDescription}
+        />
       </Grid>
-    );
-  } else {
-    content = <Grid container spacing={3} justifyContent="center" />;
+    ));
+  }
+
+  if (showWebdev) {
+    contentWebdev = projectsWebdev.map((project) => (
+      <Grid item xs={12} sm={6} md={4} style={{ display: "flex" }}>
+        <ProjectCard
+          key={project.id}
+          id={project.id}
+          image={project.image}
+          title={project.title}
+          type={project.type}
+          gitLink={project.gitLink}
+          shortDescription={project.shortDescription}
+          longDescription={project.longDescription}
+        />
+      </Grid>
+    ));
+  }
+
+  if (showCsharp) {
+    contentCsharp = projectsCsharp.map((project) => (
+      <Grid item xs={12} sm={6} md={4} style={{ display: "flex" }}>
+        <ProjectCard
+          key={project.id}
+          id={project.id}
+          image={project.image}
+          title={project.title}
+          type={project.type}
+          gitLink={project.gitLink}
+          shortDescription={project.shortDescription}
+          longDescription={project.longDescription}
+        />
+      </Grid>
+    ));
+  }
+
+  if (showCpp) {
+    contentCpp = projectsCpp.map((project) => (
+      <Grid item xs={12} sm={6} md={4} style={{ display: "flex" }}>
+        <ProjectCard
+          key={project.id}
+          id={project.id}
+          image={project.image}
+          title={project.title}
+          type={project.type}
+          gitLink={project.gitLink}
+          shortDescription={project.shortDescription}
+          longDescription={project.longDescription}
+        />
+      </Grid>
+    ));
+  }
+
+  if (showMatlab) {
+    contentMatlab = projectsMatlab.map((project) => (
+      <Grid item xs={12} sm={6} md={4} style={{ display: "flex" }}>
+        <ProjectCard
+          key={project.id}
+          id={project.id}
+          image={project.image}
+          title={project.title}
+          type={project.type}
+          gitLink={project.gitLink}
+          shortDescription={project.shortDescription}
+          longDescription={project.longDescription}
+        />
+      </Grid>
+    ));
   }
 
   return (
@@ -153,7 +240,13 @@ function ProjectList(props) {
           </ColorButtonOff>
         )}
       </Stack>
-      {content}
+      <Grid container spacing={3} justifyContent="center">
+        {contentPython}
+        {contentWebdev}
+        {contentCsharp}
+        {contentCpp}
+        {contentMatlab}
+      </Grid>
     </Container>
   );
 }
