@@ -13,7 +13,7 @@ function AboutPage() {
           <Typography variant="h6" gutterBottom component="div">
             <div className={classes.text}>
               Hi! I'm Dan Kercher, a software developer located in Indianapolis,
-              Indiana. I started Winking Cat Studios as a way to organize my
+              Indiana. I started Winking Cat Studio as a way to organize my
               personal, academic, and professional projects. Feel free to check
               some of them out on my{" "}
               <Link to="/projects">

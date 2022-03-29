@@ -44,7 +44,7 @@ const ResponsiveAppBar = () => {
             }}
           >
             <Logo />
-            &nbsp;Winking Cat Studios
+            &nbsp;Winking Cat Studio
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -149,7 +149,7 @@ const ResponsiveAppBar = () => {
             }}
           >
             <Logo />
-            &nbsp;Winking Cat Studios
+            &nbsp;Winking Cat Studio
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <Link className={classes.navItem} to="/">
