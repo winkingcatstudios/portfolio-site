@@ -5,7 +5,7 @@ import { Container, Grid } from "@mui/material/";
 function ProjectList(props) {
   return (
     <Container>
-      <Grid container spacing={3}>
+      <Grid container spacing={3} justifyContent="center">
         {props.projects.map((project) => (
           <Grid item xs={12} sm={6} md={4} style={{ display: 'flex'}}>
               <ProjectCard
