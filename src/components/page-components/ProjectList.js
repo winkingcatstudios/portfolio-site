@@ -143,8 +143,9 @@ function ProjectList(props) {
 
   return (
     <Container>
-      <Stack m={2} pb={3} justifyContent="center" spacing={2} direction="row">
+      <Grid container pb={3} justifyContent="center" spacing={2}>
         {showPython === true ? (
+          <Grid item>
           <ColorButtonOn
             variant="contained"
             onClick={() => {
@@ -153,8 +154,10 @@ function ProjectList(props) {
           >
             Python
           </ColorButtonOn>
+          </Grid>
         ) : (
-          <ColorButtonOff
+          <Grid item>
+            <ColorButtonOff
             variant="contained"
             onClick={() => {
               setShowPython(!showPython);
@@ -162,9 +165,12 @@ function ProjectList(props) {
           >
             Python
           </ColorButtonOff>
+          </Grid>
         )}
         {showWebdev === true ? (
-          <ColorButtonOn
+          
+          <Grid item>
+            <ColorButtonOn
             variant="contained"
             onClick={() => {
               setShowWebdev(!showWebdev);
@@ -172,7 +178,9 @@ function ProjectList(props) {
           >
             Webdev
           </ColorButtonOn>
+          </Grid>
         ) : (
+          <Grid item>
           <ColorButtonOff
             variant="contained"
             onClick={() => {
@@ -181,8 +189,10 @@ function ProjectList(props) {
           >
             Webdev
           </ColorButtonOff>
+          </Grid>
         )}
         {showCsharp === true ? (
+          <Grid item>
           <ColorButtonOn
             variant="contained"
             onClick={() => {
@@ -191,7 +201,9 @@ function ProjectList(props) {
           >
             C#
           </ColorButtonOn>
+          </Grid>
         ) : (
+          <Grid item>
           <ColorButtonOff
             variant="contained"
             onClick={() => {
@@ -200,8 +212,10 @@ function ProjectList(props) {
           >
             C#
           </ColorButtonOff>
+          </Grid>
         )}
         {showCpp === true ? (
+          <Grid item>
           <ColorButtonOn
             variant="contained"
             onClick={() => {
@@ -210,7 +224,9 @@ function ProjectList(props) {
           >
             C++
           </ColorButtonOn>
+          </Grid>
         ) : (
+          <Grid item>
           <ColorButtonOff
             variant="contained"
             onClick={() => {
@@ -219,8 +235,10 @@ function ProjectList(props) {
           >
             C++
           </ColorButtonOff>
+          </Grid>
         )}
         {showMatlab === true ? (
+          <Grid item>
           <ColorButtonOn
             variant="contained"
             onClick={() => {
@@ -229,7 +247,9 @@ function ProjectList(props) {
           >
             MATLAB
           </ColorButtonOn>
+          </Grid>
         ) : (
+          <Grid item>
           <ColorButtonOff
             variant="contained"
             onClick={() => {
@@ -238,8 +258,9 @@ function ProjectList(props) {
           >
             MATLAB
           </ColorButtonOff>
+          </Grid>
         )}
-      </Stack>
+      </Grid>
       <Grid container spacing={3} justifyContent="center">
         {contentPython}
         {contentWebdev}
