@@ -1,6 +1,8 @@
 import ProjectList from "../components/page-components/ProjectList";
 import classes from "./Projects.module.css";
 
+// Allowed types: Python, Webdev, C#, C++, MATLAB
+
 const PROJECT_DATA = [
   {
     id: "p1",
@@ -15,7 +17,7 @@ const PROJECT_DATA = [
   {
     id: "p2",
     title: "Project 2",
-    type: "Matlab",
+    type: "MATLAB",
     image: "/matlab_stock.jpeg",
     gitLink: "https://github.com/winkingcatstudios",
     shortDescription: "Example project in MatLab",
@@ -24,8 +26,26 @@ const PROJECT_DATA = [
   {
     id: "p3",
     title: "Portfolio Site",
-    type: "JavaScript",
+    type: "Webdev",
     image: "/js_stock.jpeg",
+    gitLink: "https://github.com/winkingcatstudios/portfolio-site",
+    shortDescription: "The site you are currently viewing",
+    longDescription: "This site was created using React, Material-UI, EmailJS",
+  },
+  {
+    id: "p4",
+    title: "C# script",
+    type: "C#",
+    image: "/csharp_stock.png",
+    gitLink: "https://github.com/winkingcatstudios/portfolio-site",
+    shortDescription: "The site you are currently viewing",
+    longDescription: "This site was created using React, Material-UI, EmailJS",
+  },
+  {
+    id: "p5",
+    title: "C++ algorithm",
+    type: "C++",
+    image: "/c++_stock.jpeg",
     gitLink: "https://github.com/winkingcatstudios/portfolio-site",
     shortDescription: "The site you are currently viewing",
     longDescription: "This site was created using React, Material-UI, EmailJS",

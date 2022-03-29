@@ -13,7 +13,6 @@ import Collapse from "@mui/material/Collapse";
 import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import { cyan, deepPurple, red } from "@mui/material/colors";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -62,7 +61,7 @@ export default function ProjectCard(props) {
       <CardHeader
         avatar={
           <Avatar
-            sx={{ bgcolor: cyan[300], color: deepPurple[900] }}
+            sx={{ bgcolor: '#71e1e1', fontWeight:'bold', color: '#321b6c' }}
             aria-label="project"
           >
             {props.type[0]}
@@ -95,7 +94,7 @@ export default function ProjectCard(props) {
           {/* {console.log(favoritesCtx.favorites.some((element) => props.id === element.id))} */}
 
           {itemIsFavorite ? (
-            <FavoriteIcon style={{ color: red[800] }} />
+            <FavoriteIcon style={{ color: '#c82a33' }} />
           ) : (
             <FavoriteIcon />
           )}
