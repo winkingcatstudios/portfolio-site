@@ -58,7 +58,7 @@ function ProjectList(props) {
 
   if (showPython) {
     contentPython = projectsPython.map((project) => (
-      <Grid item xs={12} sm={6} md={4} style={{ display: "flex" }}>
+      <Grid item xs={12} sm={6} md={4} >
         <ProjectCard
           key={project.id}
           id={project.id}
@@ -75,7 +75,7 @@ function ProjectList(props) {
 
   if (showWebdev) {
     contentWebdev = projectsWebdev.map((project) => (
-      <Grid item xs={12} sm={6} md={4} style={{ display: "flex" }}>
+      <Grid item xs={12} sm={6} md={4} >
         <ProjectCard
           key={project.id}
           id={project.id}
@@ -92,7 +92,7 @@ function ProjectList(props) {
 
   if (showCsharp) {
     contentCsharp = projectsCsharp.map((project) => (
-      <Grid item xs={12} sm={6} md={4} style={{ display: "flex" }}>
+      <Grid item xs={12} sm={6} md={4} >
         <ProjectCard
           key={project.id}
           id={project.id}
@@ -109,7 +109,7 @@ function ProjectList(props) {
 
   if (showCpp) {
     contentCpp = projectsCpp.map((project) => (
-      <Grid item xs={12} sm={6} md={4} style={{ display: "flex" }}>
+      <Grid item xs={12} sm={6} md={4} >
         <ProjectCard
           key={project.id}
           id={project.id}
@@ -126,7 +126,7 @@ function ProjectList(props) {
 
   if (showMatlab) {
     contentMatlab = projectsMatlab.map((project) => (
-      <Grid item xs={12} sm={6} md={4} style={{ display: "flex" }}>
+      <Grid item xs={12} sm={6} md={4} >
         <ProjectCard
           key={project.id}
           id={project.id}

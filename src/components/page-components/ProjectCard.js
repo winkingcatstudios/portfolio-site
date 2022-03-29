@@ -81,8 +81,8 @@ export default function ProjectCard(props) {
         image={props.image}
         alt={props.title}
       />
-      <CardContent>
-        <Typography variant="body2" color="text.secondary">
+      <CardContent >
+        <Typography multiline="true" minRows="5" variant="body2" color="text.secondary">
           {props.shortDescription}
         </Typography>
       </CardContent>
