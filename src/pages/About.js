@@ -33,7 +33,7 @@ function AboutPage() {
                 </span>
               </Link>
               <br />
-              <br />My coding skills are supplimented with over 5 years of experience in IT support. 
+              <br />My coding skills are supplemented with over 5 years of experience in IT support. 
               In addition to a degree in Computer Science, I also have a degree in History. During my 
               free time, I enjoy tabletop gaming with friends and spending time with my partner and our pets.
             </div>

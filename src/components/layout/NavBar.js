@@ -196,7 +196,7 @@ const ResponsiveAppBar = () => {
                 onClick={handleCloseNavMenu}
                 sx={{
                   fontWeight: "bold",
-                  my: 1.9,
+                  my: 1.8,
                   color: "white",
                   display: "block",
                 }}
