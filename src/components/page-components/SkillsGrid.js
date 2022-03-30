@@ -13,45 +13,46 @@ import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 import { visuallyHidden } from "@mui/utils";
 
-function createData(name, skill, years, interest) {
+function createData(name, skill, years) {
   return {
     name,
     skill,
     years,
-    interest,
   };
 }
 
+// getting rid of interest. adding comment for each topic in case I add it back in
+
 const rowsOOP = [
-  createData("Python", "5/5", 4, "5/5"),
-  createData("SOLID Principles", "4/5", 2, "5/5"),
-  createData("C#", "4/5", 6, "3/5"),
-  createData("C++", "3/5", 6, "2/5"),
-  createData("Design Patterns", "2/5", 2, "4/5"),
+  createData("Python", "4/5", 4),  // 5
+  createData("SOLID Principles", "4/5", 2), //5
+  createData("C#", "4/5", 6), // 3
+  createData("C++", "3/5", 6), // 2
+  createData("Design Patterns", "2/5", 2), // 4
 ];
 
 const rowsSoft = [
-  createData("Problem Solving", "5/5", 10, "5/5"),
-  createData("Written Communication", "5/5", 10, "4/5"),
-  createData("IT Support", "5/5", 5, "3/5"),
-  createData("Verbal Presentations", "4/5", 5, "3/5"),
-  createData("Project Management", "4/5", 3, "4/5"),
+  createData("Problem Solving", "5/5", 8), // 5
+  createData("Written Communication", "5/5", 6), // 4
+  createData("IT Support", "5/5", 6), // 3
+  createData("Verbal Presentations", "4/5", 5), // 3
+  createData("Project Management", "4/5", 3), // 4
 ];
 
 const rowsWeb = [
-  createData("JavaScript", "4/5", 4, "4/5"),
-  createData("HTML & CSS", "4/5", 4, "3/5"),
-  createData("TypeScript", "3/5", 1, "5/5"),
-  createData("Flask", "3/5", 1, "3/5"),
-  createData("React", "2/5", 1, "4/5"),
+  createData("JavaScript", "4/5", 4), // 4
+  createData("HTML & CSS", "4/5", 4), // 3
+  createData("TypeScript", "2/5", 1), // 5
+  createData("Flask", "2/5", 1), // 3
+  createData("React", "2/5", 1), // 3
 ];
 
 const rowsUtils = [
-  createData("Unity", "5/5", 6, "3/5"),
-  createData("Linux", "4/5", 3, "4/5"),
-  createData("Agile", "4/5", 2, "4/5"),
-  createData("Git", "3/5", 4, "4/5"),
-  createData("SQL", "3/5", 4, "3/5"),
+  createData("Unity", "5/5", 6), // 3
+  createData("Linux", "4/5", 3), // 4
+  createData("Agile", "4/5", 2), // 4
+  createData("Git", "3/5", 4), // 4
+  createData("SQL", "3/5", 4), // 3
 ];
 
 function descendingComparator(a, b, orderBy) {
@@ -101,13 +102,7 @@ const headCells = [
     id: "years",
     numeric: true,
     disablePadding: false,
-    label: "Years Experience",
-  },
-  {
-    id: "interest",
-    numeric: true,
-    disablePadding: false,
-    label: "Interest",
+    label: "Years",
   },
 ];
 
@@ -158,9 +153,7 @@ EnhancedTableHead.propTypes = {
 
 const EnhancedTableToolbar = (props) => {
   return (
-    <Toolbar
-
-    >
+    <Toolbar>
       <Typography
         sx={{ flex: "1 1 100%" }}
         variant="h6"
@@ -184,11 +177,9 @@ export default function EnhancedTable(props) {
     rowsUsed = rowsOOP;
   } else if (props.ver === "soft") {
     rowsUsed = rowsSoft;
-  }
-  else if (props.ver === "web") {
+  } else if (props.ver === "web") {
     rowsUsed = rowsWeb;
-  }
-  else if (props.ver === "utils") {
+  } else if (props.ver === "utils") {
     rowsUsed = rowsUtils;
   }
 
@@ -242,10 +233,13 @@ export default function EnhancedTable(props) {
   return (
     <Box sx={{ width: "100%" }}>
       <Paper sx={{ width: "100%", mb: 2 }}>
-        <EnhancedTableToolbar title={props.title} numSelected={selected.length} />
+        <EnhancedTableToolbar
+          title={props.title}
+          numSelected={selected.length}
+        />
         <TableContainer>
           <Table
-            sx={{ minWidth: 50 }}
+            sx={{ minWidth: 10 }}
             aria-labelledby="tableTitle"
             size={"medium"}
           >
@@ -284,7 +278,6 @@ export default function EnhancedTable(props) {
                       </TableCell>
                       <TableCell align="center">{row.skill}</TableCell>
                       <TableCell align="center">{row.years}</TableCell>
-                      <TableCell align="center">{row.interest}</TableCell>
                     </TableRow>
                   );
                 })}

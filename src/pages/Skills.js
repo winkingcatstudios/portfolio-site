@@ -13,7 +13,7 @@ function SkillsPage() {
           <SkillsGrid ver="oop" title="Object-Oriented Programming"/>
         </Grid>
         <Grid item xs={12} md={6} style={{ display: "flex" }}>
-          <SkillsGrid ver="soft" title="Soft Skills"/>
+          <SkillsGrid ver="soft" title="Technical Soft Skills"/>
         </Grid>
         <Grid item xs={12} md={6} style={{ display: "flex" }}>
           <SkillsGrid ver="web" title="Web Development"/>
