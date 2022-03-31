@@ -23,22 +23,24 @@ const ColorButtonOff = styled(Button)(({ theme }) => ({
 }));
 
 function ProjectList(props) {
-  const [showPython, setShowPython] = React.useState(true);
-  const [showWebdev, setShowWebdev] = React.useState(true);
-  const [showCsharp, setShowCsharp] = React.useState(true);
-  const [showCpp, setShowCpp] = React.useState(true);
-  const [showMatlab, setShowMatlab] = React.useState(true);
+  const [showAll, setShowAll] = React.useState(true);
+  const [showPython, setShowPython] = React.useState(false);
+  const [showWebdev, setShowWebdev] = React.useState(false);
+  const [showCsharp, setShowCsharp] = React.useState(false);
+  const [showCpp, setShowCpp] = React.useState(false);
+  const [showOther, setShowOther] = React.useState(false);
 
+  let contentAll;
   let contentPython;
   let contentWebdev;
   let contentCsharp;
   let contentCpp;
-  let contentMatlab;
+  let contentOther;
   let projectsPython = [];
   let projectsWebdev = [];
   let projectsCsharp = [];
   let projectsCpp = [];
-  let projectsMatlab = [];
+  let projectsOther = [];
 
   // Allowed types: Python, Webdev, C#, C++, MATLAB
 
@@ -51,14 +53,31 @@ function ProjectList(props) {
       projectsCsharp.push(project);
     } else if (project.type === "C++") {
       projectsCpp.push(project);
-    } else if (project.type === "MATLAB") {
-      projectsMatlab.push(project);
-    } 
+    } else {
+      projectsOther.push(project);
+    }
   });
+
+  if (showAll) {
+    contentAll = props.projects.map((project) => (
+      <Grid item xs={12} sm={6} md={4}>
+        <ProjectCard
+          key={project.id}
+          id={project.id}
+          image={project.image}
+          title={project.title}
+          type={project.type}
+          gitLink={project.gitLink}
+          shortDescription={project.shortDescription}
+          longDescription={project.longDescription}
+        />
+      </Grid>
+    ));
+  }
 
   if (showPython) {
     contentPython = projectsPython.map((project) => (
-      <Grid item xs={12} sm={6} md={4} >
+      <Grid item xs={12} sm={6} md={4}>
         <ProjectCard
           key={project.id}
           id={project.id}
@@ -75,7 +94,7 @@ function ProjectList(props) {
 
   if (showWebdev) {
     contentWebdev = projectsWebdev.map((project) => (
-      <Grid item xs={12} sm={6} md={4} >
+      <Grid item xs={12} sm={6} md={4}>
         <ProjectCard
           key={project.id}
           id={project.id}
@@ -92,7 +111,7 @@ function ProjectList(props) {
 
   if (showCsharp) {
     contentCsharp = projectsCsharp.map((project) => (
-      <Grid item xs={12} sm={6} md={4} >
+      <Grid item xs={12} sm={6} md={4}>
         <ProjectCard
           key={project.id}
           id={project.id}
@@ -109,7 +128,7 @@ function ProjectList(props) {
 
   if (showCpp) {
     contentCpp = projectsCpp.map((project) => (
-      <Grid item xs={12} sm={6} md={4} >
+      <Grid item xs={12} sm={6} md={4}>
         <ProjectCard
           key={project.id}
           id={project.id}
@@ -124,9 +143,9 @@ function ProjectList(props) {
     ));
   }
 
-  if (showMatlab) {
-    contentMatlab = projectsMatlab.map((project) => (
-      <Grid item xs={12} sm={6} md={4} >
+  if (showOther) {
+    contentOther = projectsOther.map((project) => (
+      <Grid item xs={12} sm={6} md={4}>
         <ProjectCard
           key={project.id}
           id={project.id}
@@ -140,133 +159,193 @@ function ProjectList(props) {
       </Grid>
     ));
   }
+
+  function handleAllButton() {
+    setShowAll(true);
+    setShowPython(false);
+    setShowWebdev(false);
+    setShowCsharp(false);
+    setShowCpp(false);
+    setShowOther(false);
+  }
+
+  function handlePythonButton() {
+    setShowAll(false);
+    setShowPython(true);
+    setShowWebdev(false);
+    setShowCsharp(false);
+    setShowCpp(false);
+    setShowOther(false);
+  }
+
+  function handleWebdevButton() {
+    setShowAll(false);
+    setShowPython(false);
+    setShowWebdev(true);
+    setShowCsharp(false);
+    setShowCpp(false);
+    setShowOther(false);
+  }
+
+  function handleCsharpButton() {
+    setShowAll(false);
+    setShowPython(false);
+    setShowWebdev(false);
+    setShowCsharp(true);
+    setShowCpp(false);
+    setShowOther(false);
+  }
+
+  function handleCppButton() {
+    setShowAll(false);
+    setShowPython(false);
+    setShowWebdev(false);
+    setShowCsharp(false);
+    setShowCpp(true);
+    setShowOther(false);
+  }
+
+  function handleOtherButton() {
+    setShowAll(false);
+    setShowPython(false);
+    setShowWebdev(false);
+    setShowCsharp(false);
+    setShowCpp(false);
+    setShowOther(true);
+  }
+
+
 
   return (
     <Container>
       <Grid container pb={3} justifyContent="center" spacing={2}>
-        {showPython === true ? (
+        {showAll === true ? (
           <Grid item>
-          <ColorButtonOn
-            variant="contained"
-            onClick={() => {
-              setShowPython(!showPython);
-            }}
-          >
-            Python
-          </ColorButtonOn>
+            <ColorButtonOn
+              variant="contained"
+              onClick={() => 
+                handleAllButton()
+              }
+            >
+              All
+            </ColorButtonOn>
           </Grid>
         ) : (
           <Grid item>
             <ColorButtonOff
-            variant="contained"
-            onClick={() => {
-              setShowPython(!showPython);
-            }}
-          >
-            Python
-          </ColorButtonOff>
+              variant="contained"
+              onClick={() => 
+                handleAllButton()
+              }
+            >
+              All
+            </ColorButtonOff>
           </Grid>
         )}
-        {showWebdev === true ? (
-          
+        {showPython === true ? (
           <Grid item>
             <ColorButtonOn
-            variant="contained"
-            onClick={() => {
-              setShowWebdev(!showWebdev);
-            }}
-          >
-            Webdev
-          </ColorButtonOn>
+              variant="contained"
+              onClick={() => handlePythonButton()}
+            >
+              Python
+            </ColorButtonOn>
           </Grid>
         ) : (
           <Grid item>
-          <ColorButtonOff
-            variant="contained"
-            onClick={() => {
-              setShowWebdev(!showWebdev);
-            }}
-          >
-            Webdev
-          </ColorButtonOff>
+            <ColorButtonOff
+              variant="contained"
+              onClick={() => handlePythonButton()}
+            >
+              Python
+            </ColorButtonOff>
+          </Grid>
+        )}
+        {showWebdev === true ? (
+          <Grid item>
+            <ColorButtonOn
+              variant="contained"
+              onClick={() => handleWebdevButton()}
+            >
+              Webdev
+            </ColorButtonOn>
+          </Grid>
+        ) : (
+          <Grid item>
+            <ColorButtonOff
+              variant="contained"
+              onClick={() => handleWebdevButton()}
+            >
+              Webdev
+            </ColorButtonOff>
           </Grid>
         )}
         {showCsharp === true ? (
           <Grid item>
-          <ColorButtonOn
-            variant="contained"
-            onClick={() => {
-              setShowCsharp(!showCsharp);
-            }}
-          >
-            C#
-          </ColorButtonOn>
+            <ColorButtonOn
+              variant="contained"
+              onClick={() => handleCsharpButton()}
+            >
+              C#
+            </ColorButtonOn>
           </Grid>
         ) : (
           <Grid item>
-          <ColorButtonOff
-            variant="contained"
-            onClick={() => {
-              setShowCsharp(!showCsharp);
-            }}
-          >
-            C#
-          </ColorButtonOff>
+            <ColorButtonOff
+              variant="contained"
+              onClick={() => handleCsharpButton()}
+            >
+              C#
+            </ColorButtonOff>
           </Grid>
         )}
         {showCpp === true ? (
           <Grid item>
-          <ColorButtonOn
-            variant="contained"
-            onClick={() => {
-              setShowCpp(!showCpp);
-            }}
-          >
-            C++
-          </ColorButtonOn>
+            <ColorButtonOn
+              variant="contained"
+              onClick={() => handleCppButton()}
+            >
+              C++
+            </ColorButtonOn>
           </Grid>
         ) : (
           <Grid item>
-          <ColorButtonOff
-            variant="contained"
-            onClick={() => {
-              setShowCpp(!showCpp);
-            }}
-          >
-            C++
-          </ColorButtonOff>
+            <ColorButtonOff
+              variant="contained"
+              onClick={() => handleCppButton()}
+            >
+              C++
+            </ColorButtonOff>
           </Grid>
         )}
-        {showMatlab === true ? (
+        {showOther === true ? (
           <Grid item>
-          <ColorButtonOn
-            variant="contained"
-            onClick={() => {
-              setShowMatlab(!showMatlab);
-            }}
-          >
-            MATLAB
-          </ColorButtonOn>
+            <ColorButtonOn
+              variant="contained"
+              onClick={() => handleOtherButton()}
+            >
+              Other
+            </ColorButtonOn>
           </Grid>
         ) : (
           <Grid item>
-          <ColorButtonOff
-            variant="contained"
-            onClick={() => {
-              setShowMatlab(!showMatlab);
-            }}
-          >
-            MATLAB
-          </ColorButtonOff>
+            <ColorButtonOff
+              variant="contained"
+              onClick={() => handleOtherButton()
+              }
+            >
+              Other
+            </ColorButtonOff>
           </Grid>
         )}
       </Grid>
       <Grid container spacing={3} justifyContent="center">
+        {contentAll}
         {contentPython}
         {contentWebdev}
         {contentCsharp}
         {contentCpp}
-        {contentMatlab}
+        {contentOther}
       </Grid>
     </Container>
   );
