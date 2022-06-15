@@ -11,9 +11,9 @@ const PROJECT_DATA = [
     type: "Python",
     image: "/python_stock.jpeg",
     gitLink: "https://github.com/winkingcatstudios/video-expression-detection",
-    shortDescription: "WIP: Facial expression categorization and face detection from recorded video or streaming camera.",
+    shortDescription: "Facial expression categorization and face detection from recorded video or streaming camera.",
     longDescription:
-      "WIP: Facial expression categorization and face detection from recorded video or streaming camera.",
+      "Abstract: The proliferation of online teaching tools has contributed to an environment in which facial recognition and expression tracking is less intrusive than ever before. Prior research in video analysis, facial recognition, and expression detection has paved the way for new applications in engagement analysis. I use these technologies to develop a program to analyze recorded video lectures to try to quantify the engagement of participants using their facial expressions as a metric. The future goal is to combine this raw data with direct survey feedback to train a model to predict engagement. I hope that this part of the engagement analysis puzzle can be combined with other techniques such as text transcriptions and vocal analysis to better measure classroom engagement along several interconnected channels. ",
   },
   {
     id: "p19",
