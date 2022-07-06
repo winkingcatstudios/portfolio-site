@@ -43,7 +43,7 @@ const rowsWeb = [
   createData("JavaScript", "4/5", 4), // 4
   createData("HTML & CSS", "4/5", 4), // 3
   createData("TypeScript", "2/5", 1), // 5
-  createData("Flask", "2/5", 1), // 3
+  createData("NodeJS", "2/5", 1), // 3
   createData("React", "2/5", 1), // 3
 ];
 
@@ -52,7 +52,7 @@ const rowsUtils = [
   createData("Linux", "4/5", 3), // 4
   createData("Agile", "4/5", 2), // 4
   createData("Git", "3/5", 4), // 4
-  createData("SQL", "3/5", 4), // 3
+  createData("SQL and NoSql", "3/5", 4), // 3
 ];
 
 function descendingComparator(a, b, orderBy) {

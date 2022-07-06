@@ -6,6 +6,16 @@ import classes from "./Projects.module.css";
 
 const PROJECT_DATA = [
   {
+    id: "p21",
+    title: "NodeJS Shop",
+    type: "Webdev",
+    image: "/js_stock.jpeg",
+    gitLink: "https://github.com/winkingcatstudios/node-js-shop",
+    shortDescription: "Node.JS ecommerce site using express, EJS templating, MongoDB, and Stripe.",
+    longDescription:
+      "Not currently hosted",
+  },
+  {
     id: "p20",
     title: "Video Facial Expression Detection",
     type: "Python",
