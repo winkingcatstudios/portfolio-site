@@ -11,7 +11,7 @@ const PROJECT_DATA = [
     type: "Webdev",
     image: "/js_stock.jpeg",
     gitLink: "https://github.com/winkingcatstudios/node-js-shop",
-    shortDescription: "Node.JS ecommerce site using express, EJS templating, MongoDB, and Stripe.",
+    shortDescription: "Node.JS ecommerce site using express, EJS templating, MongoDB, and Stripe. Features authentication and on-site admin controls.",
     longDescription:
       "Not currently hosted",
   },
