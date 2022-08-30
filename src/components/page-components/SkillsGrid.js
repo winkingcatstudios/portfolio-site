@@ -13,47 +13,48 @@ import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 import { visuallyHidden } from "@mui/utils";
 
-function createData(name, skill, years) {
-  return {
-    name,
-    skill,
-    years,
-  };
-}
+import { rowsOOP, rowsSoft, rowsWeb, rowsUtils } from "../../data";
 
-// getting rid of interest. adding comment for each topic in case I add it back in
+// function createData(name, skill, years) {
+//   return {
+//     name,
+//     skill,
+//     years,
+//   };
+// }
 
-const rowsOOP = [
-  createData("Python", "4/5", 4),  // 5
-  createData("SOLID Principles", "4/5", 2), //5
-  createData("C#", "4/5", 6), // 3
-  createData("C++", "3/5", 6), // 2
-  createData("Design Patterns", "2/5", 2), // 4
-];
+// const rowsOOP = [
+//   createData("Python", "4/5", 4),  // 5
+//   createData("SOLID Principles", "4/5", 2), //5
+//   createData("C#", "4/5", 6), // 3
+//   createData("C++", "3/5", 6), // 2
+//   createData("Design Patterns", "2/5", 2), // 4
+//   createData("Design Patterns", "2/5", 2), // 4
+// ];
 
-const rowsSoft = [
-  createData("Problem Solving", "5/5", 8), // 5
-  createData("Written Communication", "5/5", 6), // 4
-  createData("IT Support", "5/5", 6), // 3
-  createData("Verbal Presentations", "4/5", 5), // 3
-  createData("Project Management", "4/5", 3), // 4
-];
+// const rowsSoft = [
+//   createData("Problem Solving", "5/5", 8), // 5
+//   createData("Written Communication", "5/5", 6), // 4
+//   createData("IT Support", "5/5", 6), // 3
+//   createData("Verbal Presentations", "4/5", 5), // 3
+//   createData("Project Management", "4/5", 3), // 4
+// ];
 
-const rowsWeb = [
-  createData("JavaScript", "4/5", 4), // 4
-  createData("HTML & CSS", "4/5", 4), // 3
-  createData("TypeScript", "2/5", 1), // 5
-  createData("NodeJS", "2/5", 1), // 3
-  createData("React", "2/5", 1), // 3
-];
+// const rowsWeb = [
+//   createData("JavaScript", "4/5", 4), // 4
+//   createData("HTML & CSS", "4/5", 4), // 3
+//   createData("TypeScript", "2/5", 1), // 5
+//   createData("NodeJS", "2/5", 1), // 3
+//   createData("React", "2/5", 1), // 3
+// ];
 
-const rowsUtils = [
-  createData("Unity", "5/5", 6), // 3
-  createData("Linux", "4/5", 3), // 4
-  createData("Agile", "4/5", 2), // 4
-  createData("Git", "3/5", 4), // 4
-  createData("SQL and NoSql", "3/5", 4), // 3
-];
+// const rowsUtils = [
+//   createData("Unity", "5/5", 6), // 3
+//   createData("Linux", "4/5", 3), // 4
+//   createData("Agile", "4/5", 2), // 4
+//   createData("Git", "3/5", 4), // 4
+//   createData("SQL and NoSql", "3/5", 4), // 3
+// ];
 
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
@@ -96,7 +97,7 @@ const headCells = [
     id: "skill",
     numeric: true,
     disablePadding: false,
-    label: "Skill",
+    label: "Current Skill",
   },
   {
     id: "years",
@@ -187,7 +188,7 @@ export default function EnhancedTable(props) {
   const [orderBy, setOrderBy] = React.useState("calories");
   const [selected, setSelected] = React.useState([]);
   const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(5);
+  const [rowsPerPage, setRowsPerPage] = React.useState(6);
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === "asc";
