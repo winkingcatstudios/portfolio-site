@@ -9,45 +9,55 @@ function createData(name, skill, years) {
 }
 
 export const rowsOOP = [
-  createData("Python", "4/5", 4), // 5
-  createData("SOLID Principles", "4/5", 2), //5
-  createData("C#", "4/5", 6), // 3
-  createData("C++", "3/5", 6), // 2
-  createData("Design Patterns", "2/5", 2), // 4
-  createData("Design Patterns", "2/5", 2), // 4
+  createData("Python", "4/5", 4), // 2018
+  createData("SOLID Principles", "4/5", 2), // 2021
+  createData("C#", "4/5", 6), // 2016
+  createData("C++", "3/5", 6),  // 2016
+  createData("Design Patterns", "2/5", 2), // 2021
+  // createData("Ruby", "1/5", 0), // 2022
 ];
 
 export const rowsSoft = [
-  createData("Problem Solving", "5/5", 8), // 5
-  createData("Written Communication", "5/5", 6), // 4
-  createData("IT Support", "5/5", 6), // 3
-  createData("Verbal Presentations", "4/5", 5), // 3
-  createData("Project Management", "4/5", 3), // 4
-  createData("Project Management", "4/5", 3), // 4
+  createData("Problem Solving", "5/5", 8),  //2014
+  createData("Written Communication", "5/5", 8),  // 2014
+  createData("IT Support", "5/5", 6), // 2016
+  createData("Verbal Presentations", "4/5", 5), // 2017
+  createData("Project Management", "4/5", 4), // 2018
+  // createData("Leadership", "4/5", 4), // 2018 
 ];
 
 export const rowsWeb = [
-  createData("JavaScript", "4/5", 4), // 4
-  createData("HTML & CSS", "4/5", 4), // 3
-  createData("TypeScript", "2/5", 1), // 5
-  createData("NodeJS", "2/5", 1), // 3
-  createData("React", "2/5", 1), // 3
-  createData("React", "2/5", 1), // 3
+  createData("JavaScript", "4/5", 4), //
+  createData("HTML & CSS", "4/5", 4), //
+  createData("TypeScript", "2/5", 1), //
+  createData("NodeJS", "2/5", 1), //
+  createData("React", "2/5", 1),  //
+  // createData("React", "2/5", 1),  //
 ];
 
 export const rowsUtils = [
-  createData("Unity", "5/5", 6), // 3
-  createData("Linux", "4/5", 3), // 4
-  createData("Agile", "4/5", 2), // 4
-  createData("Git", "3/5", 4), // 4
-  createData("SQL and NoSql", "3/5", 4), // 3
-  createData("SQL and NoSql", "3/5", 4), // 3
+  createData("Unity", "5/5", 6),
+  createData("Linux", "4/5", 3),
+  createData("Agile", "4/5", 2),
+  createData("Git", "3/5", 4),
+  createData("SQL and NoSql", "3/5", 4),
+  // createData("SQL and NoSql", "3/5", 4),
 ];
 
 // allowed types: Python, Webdev, C#, C++, MATLAB
 // shortDescription should be exactly 3 lines on med width
 
 export const PROJECT_DATA = [
+  {
+    id: "p22",
+    title: "Dicecats",
+    type: "Webdev",
+    image: "/js_stock.jpeg",
+    gitLink: "https://github.com/winkingcatstudios/video-streaming",
+    shortDescription:
+      "Hosted at: https://dicecats.com/ Front-end for a video streaming app focused on tabletop games and cats",
+    longDescription: "Back-end API repo: https://github.com/winkingcatstudios/video-streaming-backend Privately hosted admin site repo: https://github.com/winkingcatstudios/admin-dashboard",
+  },
   {
     id: "p21",
     title: "NodeJS Shop",
